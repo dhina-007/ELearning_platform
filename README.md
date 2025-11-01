@@ -50,67 +50,48 @@ Built using **Java (Spring Boot)** for the backend and **React (PWA)** for the f
 - **Axios / RTK Query (API Integration)**
 
 ---
-
 ## 📁 Project Structure
 
-### Backend (Spring Boot)
-backend/
+```bash
+digital-learning-platform/
 │
-├── src/
-│ ├── main/
-│ │ ├── java/com/dlp/
-│ │ │ ├── controller/
-│ │ │ │ ├── CourseController.java
-│ │ │ │ ├── LessonController.java
-│ │ │ │ ├── MaterialController.java
-│ │ │ │ ├── EnrollmentController.java
-│ │ │ │ ├── UserController.java
-│ │ │ │ ├── ReportController.java
-│ │ │ │ ├── QuizController.java
-│ │ │ │ ├── DiscussionController.java
-│ │ │ │ ├── NotificationController.java
-│ │ │ ├── model/
-│ │ │ ├── repository/
-│ │ │ ├── service/
-│ │ │ ├── dto/
-│ │ │ ├── security/
-│ │ │ └── DlpApplication.java
-│ │ ├── resources/
-│ │ │ ├── application.yml
-│ │ │ └── db/changelog/
-│ │ │ └── changelog-master.xml
-│ └── test/
-│
-└── pom.xml
+├── backend/
+│   ├── src/
+│   │   ├── main/
+│   │   │   ├── java/com/learningplatform/
+│   │   │   │   ├── controller/
+│   │   │   │   ├── model/
+│   │   │   │   ├── repository/
+│   │   │   │   ├── service/
+│   │   │   │   └── DigitalLearningPlatformApplication.java
+│   │   └── resources/
+│   │       ├── application.properties
+│   │       └── data.sql
+│   ├── pom.xml
+│   └── README.md
+## 🎨 Frontend Structure (Single Codebase for Web + Mobile)
 
-
-### Frontend (React PWA)
-
+```bash
 frontend/
 │
 ├── src/
-│ ├── components/
-│ ├── pages/
-│ │ ├── Home.jsx
-│ │ ├── Courses.jsx
-│ │ ├── Lessons.jsx
-│ │ ├── Profile.jsx
-│ │ ├── AdminDashboard.jsx
-│ ├── features/
-│ │ ├── auth/
-│ │ ├── courses/
-│ │ ├── lessons/
-│ │ ├── offline/
-│ ├── hooks/
-│ ├── utils/
-│ ├── serviceWorker.js
-│ ├── App.jsx
-│ └── main.jsx
+│   ├── components/             # Reusable UI components (buttons, cards, inputs)
+│   ├── screens/                # App screens (Home, Courses, Lessons, Profile, etc.)
+│   ├── navigation/             # React Navigation routes & stack config
+│   ├── services/               # API calls using Axios or Fetch
+│   ├── context/                # Global state (AuthContext, ThemeContext)
+│   ├── hooks/                  # Custom hooks (useAuth, useOffline, etc.)
+│   ├── assets/                 # Images, icons, videos, fonts
+│   ├── utils/                  # Helper functions (formatters, constants)
+│   ├── App.js                  # Main entry point (handles routing + theme)
+│   └── index.js                # Web entry for React Native Web
 │
-└── package.json
-
-
----
+├── package.json
+├── app.json                    # Expo configuration
+├── metro.config.js             # Metro bundler config (React Native)
+├── webpack.config.js           # Web bundler config (React Native Web)
+├── babel.config.js             # Babel config
+└── README.md
 
 ## 🔗 API Documentation
 
